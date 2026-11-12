@@ -14,7 +14,7 @@ Kaggle-competitie **Voorspel verhuuraantallen 2026**.
 
 | Naam | GitHub | Kaggle-gebruikersnaam | Branch |
 |---|---|---|---|
-| Khaleel *[achternaam]* | [@Khaleellll](https://github.com/Khaleellll) | *[invullen]* | `khaleel` |
+| Khaleel Al-Aqel | [@Khaleellll](https://github.com/Khaleellll) | khaleelalaqel | `khaleel` |
 | Ahmed *[achternaam]* | *[invullen]* | *[invullen]* | `ahmed` |
 | Mehmet Kilinc | *[invullen]* | *[invullen]* | `mehmet` |
 
