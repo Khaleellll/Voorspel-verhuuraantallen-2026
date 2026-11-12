@@ -52,10 +52,10 @@ De opdrachten bouwen op elkaar voort. Om niet op elkaar te wachten:
 
 | Week | Datum | Doel |
 |---|---|---|
-| 1 | *[invullen]* | Repo en Kaggle-team klaar · `DataLoader` + opgeschoonde data in `main` · eerste Kaggle-submission (simpel model) |
-| 2 | *[invullen]* | Opdracht 1 af · eerste versie features in `main` · eerste modellen + submissions |
-| 3 | *[invullen]* | Opdracht 2 en 3 af · alle modellen op Kaggle · bevindingen en conclusie samen schrijven |
-| 4 | *[invullen]* | Alles samengevoegd · eindcontrole · inleveren (**deadline: [invullen]**) · voorbereiding assessment |
+| 1 | 12/11 | Repo en Kaggle-team klaar · `DataLoader` + opgeschoonde data in `main` · eerste Kaggle-submission (simpel model) |
+| 2 | 16/11 | Opdracht 1 af · eerste versie features in `main` · eerste modellen + submissions |
+| 3 | 17/11 | Opdracht 2 en 3 af · alle modellen op Kaggle · bevindingen en conclusie samen schrijven |
+| 4 | 20/11 | Alles samengevoegd · eindcontrole · inleveren (**deadline: [invullen]**) · voorbereiding assessment |
 
 ---
 
