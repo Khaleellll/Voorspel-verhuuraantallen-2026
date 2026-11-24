@@ -218,3 +218,7 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Lokale bestanden (niet in de repo)
+voorbeeld/
+.DS_Store
