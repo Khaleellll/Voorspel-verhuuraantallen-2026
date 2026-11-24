@@ -15,7 +15,7 @@ Kaggle-competitie **Voorspel verhuuraantallen 2026**.
 | Naam | GitHub | Kaggle-gebruikersnaam | Branch |
 |---|---|---|---|
 | Khaleel Al-Aqel | [@Khaleellll](https://github.com/Khaleellll) | khaleelalaqel | `khaleel` |
-| Ahmed *[achternaam]* | *[invullen]* | *[invullen]* | `ahmed` |
+| Ahmed Bashabeeb | [@AhmedBashabeeb](https://github.com/AhmedBashabeeb) | ahmedbashabeeb | `ahmed` |
 | Mehmet Kilinc | [@Mehmet-hhs](https://github.com/Mehmet-hhs) | mehmetkilinc123 | `mehmet` |
 
 **Kaggle-teamnaam:** *[invullen]*
@@ -26,23 +26,56 @@ Kaggle-competitie **Voorspel verhuuraantallen 2026**.
 
 ### Taakverdeling
 
-| Onderdeel | Wie | Inhoud |
-|---|---|---|
-| **Opdracht 1: EDA** | Khaleel | Kaggle-team aanmaken · data inladen (`DataLoader`) · datatypes en basisstatistieken · datakwaliteit (missende waarden, ontbrekende uren, onjuiste waarden) · tijdreekselementen toevoegen · visualisaties van patronen (dag, week, jaar, trend) · relaties tussen de variabelen en `cnt` · data opschonen · belangrijkste bevindingen |
-| **Opdracht 2: Time series feature engineering** | Ahmed | Evaluatiemethode (`TimeSeriesSplit`, RMSE) · onderzoek naar trend · seizoenspatronen met Fourier-analyse (periodogram) · cycli en autocorrelatie (ACF/PACF) · overige tijdsfeatures · `FeatureEngineer`-klasse · experiment: invloed van de features · onderbouwde keuze van de features |
-| **Opdracht 3: Modelleren** | Mehmet | `ModelTrainer`-klasse (GridSearchCV + cross-validatie) · lineaire regressie met regularisatie (wiskundige uitleg: loss function, Ridge/Lasso) · ensemble-modellen (Random Forest, XGBoost, met wiskundige uitleg) · minstens 5 modellen in totaal · SARIMAX + een tweede tijdreeksmodel · hybride model (residuen) · hyperparameter tuning per model · submission-bestand per model |
-| **Bevindingen** | Gezamenlijk | Overzicht van de resultaten · beste model en parameters · Kaggle-scores en verbeteringen |
-| **Opdracht 4: Conclusie en aanbevelingen** | Gezamenlijk | Belangrijkste features · aansluiting op de EDA · advies aan CityBike · modeladvies (en andere overwegingen dan alleen de score) |
-| **Kaggle** | Gezamenlijk | Alle modellen uploaden · scores bijhouden in de tabel hieronder |
-| **Bronnenlijst** | Gezamenlijk | APA-stijl, inclusief GenAI-prompts (zie afspraken) |
-| **Eindversie** | Khaleel (samenvoegen), iedereen controleert | Alles samenvoegen in één notebook · notebook draait van begin tot eind · PEP8-controle |
+| Onderdeel | Wie | Status | Inhoud |
+|---|---|---|---|
+| **Organisatie** | Khaleel | ✅ klaar | Kaggle-team aangemaakt · GitHub-repository aangemaakt · taken verdeeld · werkstructuur vastgelegd (branches, mappen, afspraken in deze README) |
+| **Opdracht 1: EDA** | Khaleel | ✅ klaar | Data inladen (`DataLoader`) · datatypes en basisstatistieken · datakwaliteit (missende waarden, ontbrekende uren, onjuiste waarden) · tijdreekselementen toevoegen · visualisaties van patronen (dag, week, jaar, trend) · relaties tussen de variabelen en `cnt` · data opschonen · belangrijkste bevindingen · data in `data/` |
+| **Opdracht 2: Time series feature engineering** | Ahmed | | Evaluatiemethode (`TimeSeriesSplit`, RMSE) · onderzoek naar trend · seizoenspatronen met Fourier-analyse (periodogram) · cycli en autocorrelatie (ACF/PACF) · overige tijdsfeatures · `FeatureEngineer`-klasse · experiment: invloed van de features · onderbouwde keuze van de features |
+| **Opdracht 3: Modelleren** | Mehmet | | `ModelTrainer`-klasse (GridSearchCV + cross-validatie) · lineaire regressie met regularisatie (wiskundige uitleg: loss function, Ridge/Lasso) · ensemble-modellen (Random Forest, XGBoost, met wiskundige uitleg) · minstens 5 modellen in totaal · SARIMAX + een tweede tijdreeksmodel · hybride model (residuen) · hyperparameter tuning per model · submission-bestand per model |
+| **Bevindingen** | Mehmet | | Overzicht van de resultaten · beste model en parameters · Kaggle-scores en verbeteringen |
+| **Kaggle** | Mehmet | | Alle modellen uploaden · scores bijhouden in de tabel hieronder |
+| **Opdracht 4: Conclusie en aanbevelingen** | Ahmed | | Belangrijkste features · aansluiting op de EDA · advies aan CityBike · modeladvies (en andere overwegingen dan alleen de score) |
+| **Bronnenlijst** | Ahmed | | Alle bronnen samenvoegen in APA-stijl, inclusief GenAI-prompts (zie afspraken) |
+| **Eindversie en inleveren** | Ahmed (samenvoegen en inleveren), Mehmet controleert | | Alles samenvoegen in één notebook · notebook draait van begin tot eind · PEP8-controle · inleveren |
+
+### Khaleel: wat er klaar is
+
+**Organisatie**
+
+- Kaggle-team aangemaakt voor de competitie *Voorspel verhuuraantallen 2026*.
+- GitHub-repository aangemaakt, met een eigen branch per teamlid.
+- Taken verdeeld (tabel hierboven) en de planning gemaakt.
+- Werkstructuur vastgelegd: mappenstructuur, werkwijze met branches en pull requests, en afspraken
+  over code, bronnen en GenAI (zie hieronder).
+
+**Opdracht 1: EDA** (alles staat in `main`)
+
+- **`notebooks/opdracht1_eda.ipynb`**: de volledige EDA (paragraaf 1.1 t/m 1.10), met bronnen en de
+  link naar het GenAI-gesprek (prompt 1 t/m 4).
+- **`data/`**: `train.csv`, `test.csv` en `sample_submission.csv`.
+- **Klasse `DataLoader`** (paragraaf 1.2): kopieer deze naar je eigen notebook. De opgeschoonde data
+  krijg je zo:
+
+  ```python
+  loader = DataLoader(os.path.join('..', 'data'))
+  train_raw = loader.load('train.csv')
+  train = loader.clean(train_raw, ['2012-10-29', '2012-10-30'])
+  ```
+
+- **Opschoning:** `hum == 0` (22 meetfouten) vervangen door interpolatie, 29–30 oktober 2012
+  (uitzonderlijke dagen) verwijderd. In de trainingsdata ontbreken 163 uren.
+- **Belangrijkste bevindingen voor Opdracht 2 en 3** (zie 1.10): het uur is de grootste bron van
+  variatie (η = 0,71), en uur en type dag moeten **samen** gebruikt worden (interactie: twee
+  spitsen op werkdagen, één middagpiek in het weekend). Verder: trend van 2011 naar 2012,
+  jaarseizoen, en het weer (`temp`, `hum`, `weathersit`). `cnt` is scheef verdeeld, dus een
+  log-schaal of Poisson-loss kan helpen.
 
 ### Afhankelijkheden
 
 De opdrachten bouwen op elkaar voort. Om niet op elkaar te wachten:
 
-1. **Khaleel** zet als eerste `DataLoader` en de opgeschoonde data in `main`. Ahmed en Mehmet
-   gebruiken die.
+1. ✅ **Khaleel** heeft `DataLoader`, de opgeschoonde data en de EDA in `main` gezet. Ahmed en
+   Mehmet gebruiken die.
 2. **Ahmed** zet zo snel mogelijk een eerste versie van `FeatureEngineer` in `main`. Daarna kan hij
    de features verder verbeteren.
 3. **Mehmet** kan meteen beginnen met `ModelTrainer` en de modeluitleg, en test eerst met eenvoudige
@@ -73,7 +106,7 @@ De opdrachten bouwen op elkaar voort. Om niet op elkaar te wachten:
 ```
 
 Iedereen werkt in **een eigen notebook**. Zo zijn er geen merge-conflicten (twee mensen die
-hetzelfde `.ipynb`-bestand aanpassen geeft bijna altijd conflicten). Aan het eind voegt Khaleel de
+hetzelfde `.ipynb`-bestand aanpassen geeft bijna altijd conflicten). Aan het eind voegt Ahmed de
 delen samen in `Portfolio2_CityBike.ipynb`.
 
 ---
@@ -104,7 +137,7 @@ git push
 
 1. Ga op GitHub naar de repo → **Pull requests** → **New pull request**.
 2. Kies `base: main` ← `compare: <jouw branch>` en schrijf kort wat je hebt gedaan.
-3. Khaleel controleert de pull request en klikt op **Merge**.
+3. Het andere teamlid (Ahmed of Mehmet) controleert de pull request en klikt op **Merge**.
 4. Daarna doet iedereen `git pull origin main` op de eigen branch.
 
 ### Afspraken
