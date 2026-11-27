@@ -171,10 +171,23 @@ Zet `train.csv`, `test.csv` en `sample_submission.csv` (van Kaggle) in de map `d
 ## Kaggle-scores
 
 | # | Datum | Wie | Model / verbetering | Bestand | CV-RMSE | Kaggle public |
-|---|---|---|---|---|---|---|
-| 1 | | | | | | |
-| 2 | | | | | | |
-| 3 | | | | | | |
+|---|---|---|---|---|---:|---:|
+| 1 | 12-11-2026 | Khaleel | XGBoost (ronde 1) | `submission_xgb.csv` | — | 49,28172 |
+| 2 | 12-11-2026 | Khaleel | Beslisboom (ronde 1) | `submission_tree.csv` | — | 62,11089 |
+| 3 | 12-11-2026 | Khaleel | SVR (ronde 1) | `submission_svr.csv` | — | 63,40589 |
+| 4 | 12-11-2026 | Khaleel | SARIMAX (ronde 1) | `submission_sarimax.csv` | — | 54,84523 |
+| 5 | 12-11-2026 | Khaleel | Random Forest (ronde 1) | `submission_rf.csv` | — | 66,13760 |
+| 6 | 12-11-2026 | Khaleel | Prophet (ronde 1) | `submission_prophet.csv` | — | 73,82706 |
+| 7 | 12-11-2026 | Khaleel | Lineaire regressie (ronde 1) | `submission_linear.csv` | — | 56,14528 |
+| 8 | 12-11-2026 | Khaleel | Hybride model (ronde 1) | `submission_hybrid.csv` | — | 49,42684 |
+| 9 | 12-11-2026 | Khaleel | Gemiddelde van XGBoost en het hybride model (ronde 1) | `submission_average.csv` | — | 47,44858 |
+| 10 | 27-11-2026 | Mehmet | Hybride model met Poisson-loss | `submission_hybrid_poisson.csv` | 42,8 | **40,99780** |
+| 11 | 27-11-2026 | Mehmet | Gradient Boosting | `submission_gb.csv` | 50,37 | 41,16671 |
+| 12 | 27-11-2026 | Mehmet | Seizoensbaseline | `submission_baseline.csv` | 70,32 | 49,77962 |
+
+Onze beste openbare Kaggle-score is **40,99780** met het hybride Poisson-model.
+Dat is **6,45 RMSE-punten lager** dan onze beste score uit ronde 1 (47,44858).
+Daarmee halen we de eis van een Kaggle-RMSE onder 80.
 
 ---
 
